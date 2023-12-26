@@ -13,12 +13,12 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
   }, [active, projects, setFiltered]);
 
   return (
-    <div className="flex justify-center py-12 flex-wrap">
+    <div className="flex justify-center items-center py-12 flex-wrap gap-3">
       <button
         className={
           active === "all"
-            ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white"
-            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white"
+            ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white w-[100px] h-[40px]"
+            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800 w-[100px] h-[40px]  py-2 px-4 text-white"
         }
         onClick={() => setActive("all")}
       >
@@ -27,8 +27,8 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
       <button
         className={
           active === ""
-            ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white"
-            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white mt-4 sm:mt-0"
+            ? "rounded mx-2 bg-indigo-900 py-2 px-4 w-[100px] h-[40px] text-white"
+            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800 w-[140px] h-[40px]  py-2 px-4 text-white  sm:mt-0"
         }
         onClick={() => setActive("html")}
       >
@@ -46,13 +46,13 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
       </button>
       <button
         className={
-          active === "nextjs"
+          active === "redux"
             ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white"
             : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white"
         }
-        onClick={() => setActive("nextjs")}
+        onClick={() => setActive("redux")}
       >
-        Nextjs
+        Redux
       </button>
       <button
         className={
@@ -68,7 +68,7 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
         className={
           active === "python"
             ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white"
-            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white mt-4 sm:mt-0"
+            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white  sm:mt-0"
         }
         onClick={() => setActive("python")}
       >
@@ -78,7 +78,7 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
         className={
           active === "java"
             ? "rounded mx-2 bg-indigo-900 py-2 px-4 text-white"
-            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white mt-4 sm:mt-0"
+            : "rounded mx-2 bg-indigo-700 hover:bg-indigo-800  py-2 px-4 text-white  sm:mt-0"
         }
         onClick={() => setActive("java")}
       >

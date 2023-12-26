@@ -6,12 +6,90 @@ import { motion, useAnimation } from "framer-motion";
 import Lottie from "react-lottie";
 import { useInView } from "react-intersection-observer";
 import { serviceTextAnimation } from "../../../Animations/Animations";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const servicesData = [
   {
     id: 1,
-    title: "FRONTEND DEVELOPER",
+    title: "Python Developer",
+    image: "/python.gif",
+    lottieOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: service1,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    },
+    description:
+      "As a Front-End developer I have vast experience in making user-friendly web interfaces that help improve user experience and increase customer engagement.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, type: "spring" },
+      },
+    },
+  }, {
+    id: 1,
+    title: "Prontend Developer",
+    image: "/frontend.gif",
+    lottieOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: service1,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    },
+    description:
+      "As a Front-End developer I have vast experience in making user-friendly web interfaces that help improve user experience and increase customer engagement.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, type: "spring" },
+      },
+    },
+  },
+  {
+    id: 1,
+    title: "GAME DEVELOPER",
+    image: "/game.gif",
+    lottieOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: service1,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    },
+    description:
+      "As a Front-End developer I have vast experience in making user-friendly web interfaces that help improve user experience and increase customer engagement.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1, type: "spring" },
+      },
+    },
+  },
+  {
+    id: 1,
+    title: "Softwore Enginear",
+    image: "softwore.webp",
     lottieOptions: {
       loop: true,
       autoplay: true,
@@ -37,6 +115,7 @@ const servicesData = [
   {
     id: 2,
     title: "BACKEND DEVELOPER",
+    image: "/backend.gif",
     lottieOptions: {
       loop: true,
       autoplay: true,
@@ -88,23 +167,23 @@ const servicesData = [
 
 const Services = () => {
 
- const { ref, inView } = useInView({
-   threshold: 0.5,
-   triggerOnce: true,
- });
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
- const [viewDiv, setViewDiv] = useState(false);
+  const [viewDiv, setViewDiv] = useState(false);
 
- const animation = useAnimation();
+  const animation = useAnimation();
 
- useEffect(() => {
-   if (inView) {
-    setViewDiv(true);
-   }
-   if (!inView) {
-    setViewDiv(false);
-   }
- }, [inView, animation]);
+  useEffect(() => {
+    if (inView) {
+      setViewDiv(true);
+    }
+    if (!inView) {
+      setViewDiv(false);
+    }
+  }, [inView, animation]);
 
   return (
     <section className="container px-6 mx-auto pb-20" id="services">
@@ -118,7 +197,7 @@ const Services = () => {
         <span className="text-indigo-600 dark:text-indigo-500"> Services</span>
       </motion.h2>
       <div
-        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch gap-x-8"
+        className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center md:items-stretch lg:items-stretch gap-8"
         ref={ref}
       >
         {servicesData.map((service) => (
@@ -129,11 +208,15 @@ const Services = () => {
             key={service.id}
             className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96"
           >
-            <Lottie
-              options={service?.lottieOptions}
-              height={"50%"}
-              width={"70%"}
-            />
+            {
+              service.image ?
+                <img src={service.image} alt="" />
+                :
+                <Lottie
+                  options={service?.lottieOptions}
+                  height={"50%"}
+                  width={"70%"}
+                />}
             <div className="p-5">
               <h5 className="mb-2 text-2xl md:text-sm lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {service?.title}

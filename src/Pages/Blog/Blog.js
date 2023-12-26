@@ -14,7 +14,7 @@ const Blog = () => {
     speed: 500,
     slidesToScroll: 1,
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false,
     responsive: [
       {
@@ -57,18 +57,18 @@ const Blog = () => {
             <div>
               <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
                 <a
-                  href="https://massivepixel.io/blog/b2b-website-design/"
+                  href="https://www.designveloper.com/blog/igaming-website-design/"
                   target="_blank"
                   className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
                 >
                   <div className="flex items-center justify-center w-full h-full">
                     <h1 className="text-white text-2xl font-semibold text-center">
-                      UX & UI Best Practices To Increase Sales with Your B2B Website Design
+                    iGaming Website Design: Anti-Money Laundering Guidance
                     </h1>
                   </div>
                 </a>
                 <img
-                  src="https://massivepixel.io/wp-content/uploads/2022/04/b2b-website-design-hero-header-1400x583.png"
+                  src="https://www.designveloper.com/wp-content/uploads/2023/12/igaming-website-design-anti-money-laundering-guidance.png"
                   alt="blog"
                   className="blog-image w-full h-72 hidden rounded-lg"
                 />
@@ -77,18 +77,18 @@ const Blog = () => {
             <div>
               <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
                 <a
-                  href="https://massivepixel.io/blog/react-lifecycle-methods/"
+                  href="https://www.designveloper.com/blog/responsive-web-design/"
                   target="_blank"
                   className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
                 >
                   <div className="flex items-center justify-center w-full h-full">
                     <h1 className="text-white text-2xl font-semibold text-center">
-                      React Lifecycle Methods
+                    Responsive Web Design: Definition, Best Practice, Pros & Cons
                     </h1>
                   </div>
                 </a>
                 <img
-                  src="https://massivepixel.io/wp-content/uploads/2022/02/react-lifecycle-methods-1400x583.png"
+                  src="https://www.designveloper.com/wp-content/uploads/2021/07/responsive-web-design.jpg"
                   alt="blog"
                   className="blog-image w-full  h-72 hidden rounded-lg"
                 />
@@ -97,19 +97,20 @@ const Blog = () => {
             <div>
               <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
                 <a
-                  href="https://massivepixel.io/blog/angular-best-practices/"
+                  href="https://www.designveloper.com/blog/modern-website-design/"
                   target="_blank"
                   className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
                 >
                   <div className="flex items-center justify-center w-full h-full">
                     <h1 className="text-white text-2xl font-semibold text-center">
 
-                      24 Angular Best Practices You Shouldn’t Code Without
+                    10 Modern Website Design Examples: A Complete Guide
+
                     </h1>
                   </div>
                 </a>
                 <img
-                  src="https://massivepixel.io/wp-content/uploads/2022/02/angular-best-practices-1400x583.png"
+                  src="https://www.designveloper.com/wp-content/uploads/2023/03/Designveloper-Modern-Website-Design-Concepts.png"
                   alt="blog"
                   className="blog-image w-full h-72 hidden rounded-lg"
                 />
@@ -118,18 +119,38 @@ const Blog = () => {
             <div>
               <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
                 <a
-                  href="https://massivepixel.io/blog/node-js-rest-api/"
+                  href="https://www.designveloper.com/blog/what-is-a-web-based-application/"
                   target="_blank"
                   className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
                 >
                   <div className="flex items-center justify-center w-full h-full">
                     <h1 className="text-white text-2xl font-semibold text-center">
-                    How to Create Node JS REST API?
+                    What Is a Web-based Application? Examples and Benefits
                     </h1>
                   </div>
                 </a>
                 <img
-                  src="https://massivepixel.io/wp-content/uploads/2022/02/how-to-create-nodejs-rest-api-1400x583.png"
+                  src="https://www.designveloper.com/wp-content/uploads/2022/03/what-is-a-web-based-application.jpg"
+                  alt="blog"
+                  className="blog-image w-full h-72 hidden rounded-lg"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
+                <a
+                  href="https://www.designveloper.com/blog/web-application-examples/"
+                  target="_blank"
+                  className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    <h1 className="text-white text-2xl font-semibold text-center">
+                    10 Web Application Examples and Definition for Beginners
+                    </h1>
+                  </div>
+                </a>
+                <img
+                  src="https://www.designveloper.com/wp-content/uploads/2021/02/web-application-examples.png"
                   alt="blog"
                   className="blog-image w-full h-72 hidden rounded-lg"
                 />

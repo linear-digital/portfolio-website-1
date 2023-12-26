@@ -1,32 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import SocialLogin from '../Home/Auth/SocialLogin'
-import {  signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from './firebase.init'
 import toast from 'react-hot-toast'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Login = () => {
     const navigate = useNavigate()
+    const [user] = useAuthState(auth);
     const formHandler = (e) => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
         if (email && password) {
             signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-              // Signed in 
-              const user = userCredential.user;
-              navigate('/')
-              // ...
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              toast.error(errorCode)
-            });
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    navigate('/')
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    toast.error(errorCode)
+                });
         }
     }
-     
+
     const [show, setShow] = useState(false)
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [user])
     return (
         <div className='min-h-screen'>
             <>

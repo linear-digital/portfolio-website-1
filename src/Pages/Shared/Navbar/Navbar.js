@@ -14,12 +14,14 @@ import { motion } from 'framer-motion';
 import { navAnimationLogo } from '../../../Animations/Animations';
 import { auth } from '../../Auth/firebase.init';
 import { signOut } from 'firebase/auth';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 const Navbar = () => {
 
   const [open, setOpen] = React.useState(false);
-  const user = auth?.currentUser
-  
+  const [user, loading, error] = useAuthState(auth);
+  if (loading) {
+    return
+  }
   return (
     <>
       {/* This example requires Tailwind CSS v2.0+ */}
@@ -33,7 +35,9 @@ const Navbar = () => {
               className="flex justify-start lg:w-0 lg:flex-1"
             >
               <Link to="/">
-                <h1 className='text-indigo-500 font-bold text-3xl logo-font'>Hazrat Ali</h1>
+                <h1 className='text-indigo-500 font-bold text-3xl logo-font'>
+                  Hazrat Ali
+                </h1>
               </Link>
             </motion.div>
             <div className="-mr-2 -my-2 md:hidden">
@@ -81,21 +85,21 @@ const Navbar = () => {
                   Services
                 </span>
               </a>
-              <a activeclassname="active" href="/#about">
+              <a activeclassname="active" href="/#project">
                 <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
-                  About
+                  Project
                 </span>
               </a>
               <div className="relative">
-                <a activeclassname="active" href="/#project">
+                <a activeclassname="active" href="/#skills">
                   <span className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900">
-                    Project
+                    Skills
                   </span>
                 </a>
               </div>
-              <a activeclassname="active" href="/#skills">
+              <a activeclassname="active" href="/#education">
                 <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
-                  Skills
+                  Education
                 </span>
               </a>
               <a activeclassname="active" href="/#blog">
@@ -108,9 +112,9 @@ const Navbar = () => {
                   Team
                 </span>
               </a>
-              <a activeclassname="active" href="/#education">
+              <a activeclassname="active" href="#about">
                 <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
-                  Education
+                  About
                 </span>
               </a>
               <a activeclassname="active" href="/#contact">
@@ -225,23 +229,6 @@ const Navbar = () => {
                   </NavLink>
                   <a
                     activeclassname="active"
-                    href="/#about"
-                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                  >
-                    {/* Heroicon name: outline/cursor-click */}
-                    <IconContext.Provider
-                      value={{
-                        className: "text-2xl text-indigo-600",
-                      }}
-                    >
-                      <AiOutlineProject />
-                    </IconContext.Provider>
-                    <span className="ml-3 text-base font-medium text-gray-900">
-                      About
-                    </span>
-                  </a>
-                  <a
-                    activeclassname="active"
                     href="/#services"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
@@ -276,7 +263,24 @@ const Navbar = () => {
                   </a>
                   <a
                     activeclassname="active"
-                    href="/#skills"
+                    href="/#project"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
+                    {/* Heroicon name: outline/cursor-click */}
+                    <IconContext.Provider
+                      value={{
+                        className: "text-2xl text-indigo-600",
+                      }}
+                    >
+                      <AiOutlineProject />
+                    </IconContext.Provider>
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      Project
+                    </span>
+                  </a>
+                  <a
+                    activeclassname="active"
+                    href="/#education"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     {/* Heroicon name: outline/shield-check */}
@@ -288,7 +292,7 @@ const Navbar = () => {
                       <ImBlog />
                     </IconContext.Provider>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Skills
+                      Education
                     </span>
                   </a>
                   <a
@@ -327,7 +331,7 @@ const Navbar = () => {
                   </a>
                   <a
                     activeclassname="active"
-                    href="/#education"
+                    href="#about"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     {/* Heroicon name: outline/cursor-click */}
@@ -339,26 +343,10 @@ const Navbar = () => {
                       <AiOutlineProject />
                     </IconContext.Provider>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Education
+                      About
                     </span>
                   </a>
-                  <NavLink
-                    activeclassname="active"
-                    to="/dashboard"
-                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                  >
-                    {/* Heroicon name: outline/cursor-click */}
-                    <IconContext.Provider
-                      value={{
-                        className: "text-2xl text-indigo-600",
-                      }}
-                    >
-                      <AiOutlineProject />
-                    </IconContext.Provider>
-                    <span className="ml-3 text-base font-medium text-gray-900">
-                      Dashboard
-                    </span>
-                  </NavLink>
+
                   <NavLink
                     activeclassname="active"
                     to="/contact"

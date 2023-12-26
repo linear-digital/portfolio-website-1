@@ -1,14 +1,21 @@
 import React from "react";
 import "./Loader.css";
 
-const Loader = () => {
+const Loader = ({ loading, change }) => {
   return (
     <div className="loader dark:bg-black">
       <section id="preloader-section">
         <div id="preloader">
           <div id="ctn-preloader" className="ctn-preloader">
             <div className="animation-preloader">
-              <div className="spinner"></div>
+              {/* <div className="spinner"></div> */}
+              {
+                change ?
+                  <img src="/end.gif" alt="" className="h-[400px]" />
+                  :
+                  <img src="/start.gif" alt="" className="h-[400px]" />
+              }
+
 
               <div className="txt-loading">
                 <span data-text-preloader="H" className="letters-loading">
@@ -25,6 +32,9 @@ const Loader = () => {
                 </span>
                 <span data-text-preloader="A" className="letters-loading">
                   A
+                </span>
+                <span data-text-preloader="T" className="letters-loading">
+                  T
                 </span>
                 <span data-text-preloader="" className="letters-loading">
                   {" "}

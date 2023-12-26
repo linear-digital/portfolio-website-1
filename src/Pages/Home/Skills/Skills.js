@@ -23,7 +23,7 @@ const SkillCard = ({ data }) => {
       data-aos-duration="2000"
     >
       <div
-        class="bg-teal-400 h-3.5 rounded-full"
+        class="gradiant h-3.5 rounded-full"
         style={{ width: `${data.pers}%` }}
       ></div>
     </div>
@@ -143,12 +143,12 @@ const Skills = () => {
   ]
   return (
     <div id="skills">
-      <h1 className="text-xl font-bold text-center title">Skills</h1>
-      <h2 className="text-4xl font-bold text-center text-white">
+      <h1 className="text-4xl mb-3 text-teal-300 font-bold text-center title">Programming Skills</h1>
+      <h2 className="text-2xl font-bold text-center text-white">
         I Work Hard to Improve My Skills
         <br /> Regularly
       </h2>
-      <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 mx-auto px-40">
+      <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 mx-auto lg:px-40 px-5">
         {/* Web Development Skills  */}
         <div
           class="rounded-lg dark:border-gray-700"

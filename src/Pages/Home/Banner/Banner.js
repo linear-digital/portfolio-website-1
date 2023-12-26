@@ -37,12 +37,13 @@ const Banner = () => {
     }
   }, [inView, animation]);
   return (
-    <section ref={ref} className="container px-6 mx-auto relative">
-      <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20 px-6 lg:justify-between">
+    <section ref={ref} className="container lg:px-10 px-5 mx-auto relative">
+      <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20  lg:justify-between items-center">
         <div
           initial="hidden"
           animate={viewDiv && "visible"}
           variants={bannerLeftVariant}
+          className="lg:w-auto w-full "
         >
           <h3 className="text-[25px] mb-3 text-left tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
             Hi There,
@@ -74,7 +75,7 @@ const Banner = () => {
             advance
           </p>
           <div className="flex flex-col">
-            <div className="social-links my-8 lg:my-4">
+            <div className="social-links flex-wrap gap-3 my-8 lg:my-4">
               <a
                 rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
@@ -174,9 +175,9 @@ const Banner = () => {
           initial="hidden"
           animate={viewDiv && "visible"}
           variants={bannerRightVariant}
-          className="lg:w-1/3 md:w-3/4 md:mx-auto"
+          className="lg:w-[35%]  md:w-3/4  flex justify-center items-center"
         >
-          <Lottie options={defaultOptions} height={"70%"} width={"100%"} />
+          <img src={'/ali.png'} alt="banner" className="" width={600} height={600} />
         </motion.div>
       </div>
     </section>

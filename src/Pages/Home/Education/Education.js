@@ -35,7 +35,7 @@ const Education = () => {
                                 School
                             </h3>
                             <p className="text-sm text-white font-semibold">
-                                Sciece
+                                Science
                             </p>
                         </div>
                         <p className="text-sm  text-right text-white">
@@ -54,7 +54,7 @@ const Education = () => {
                                 College
                             </h3>
                             <p className="text-sm text-white font-semibold">
-                                Sciece
+                                Science
                             </p>
                         </div>
                         <p className="text-sm  text-right text-white">

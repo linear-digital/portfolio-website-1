@@ -62,26 +62,27 @@ const Contact = () => {
       });
       return;
     }
-    const name = e.target.firstName + " " + e.target.lastName
-    const email = e.target.email
-    const text = e.target.message
-    const subject = "Mail From Website"
-    fetch('http://localhost:5000/send', {
-      method: "POST",
-      headers: {
-        "content-type": 'application/json'
-      },
-      body: JSON.stringify({ name, email, text, subject })
-    })
-      .then(res => {
-        if (res.status === 200) {
-          toast.success("Email Send Success")
-          e.target.reset()
-        }
-        else {
-          toast.warn("Something went wrong while sending mail")
-        }
+    const name = values.firstName + " " + values.lastName
+
+    if (values.email) {
+      const subject = "Mail From Website"
+      fetch('http://localhost:8000/send', {
+        method: "POST",
+        headers: {
+          "content-type": 'application/json'
+        },
+        body: JSON.stringify({ name, ...values, subject,  })
       })
+        .then(res => {
+          if (res.status === 200) {
+            toast.success("Email Send Success")
+            e.target.reset()
+          }
+          else {
+            toast.warn("Something went wrong while sending mail")
+          }
+        })
+    }
   };
 
   const defaultOptions = {
@@ -113,9 +114,7 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Hazrat Ali - Contact</title>
-      </Helmet>
+
       <section id="contact" className="contact_section py-12" ref={ref}>
         <ToastContainer
           position="top-right"
@@ -135,7 +134,7 @@ const Contact = () => {
             variants={ContactTextAnimation}
             className="text-sm leading-7 dark:text-white text-gray-500 font-regular uppercase"
           >
-            Contact
+            <h1 className="text-4xl mb-3 text-teal-300 font-bold text-center title">Contact Us</h1>
           </motion.p>
           <motion.h3
             initial="hidden"
